@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock title %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel='stylesheet'href="{%static "app.css" %}" />
+        
+
+        {% block css_files %}
+        <link rel="icon" href="{% static 'favicon.png' %}" type="image/png">
+
+        {% endblock css_files %}
+    </head>
+    <body>
+        <header id="main-navigation">
+            <h1><a href="{% url "main_page" %}">HOME</a></h1>
+            
+            <h1><a href="{% url "posts_page" %}">ALL PROJECTS</a></h1>
+            <h1><a href="{% url "read-later" %}">READ LATER</a></h1>
+
+        </header>
+        {% block main_layout %}
+        
+        {% endblock main_layout %}
+
+        
+        <script src="{% static 'scroll_event.js' %}"></script>
+
+    </body>
+</html>

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Portfolio{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{%static "blog/posts.css" %}" />
+    <link rel="stylesheet" href="{%static "blog/index.css" %}" />
+{% endblock css_files %}
+
+{% block main_layout %}
+
+
+<section id='welcome'>
+    <header>
+        <img src="{% static 'smiley.jpg' %}" alt='Martin - author of this blog' />
+        <h2>My portfolio</h2>
+    </header>
+    <p>Welcome to my portfolio!
+         I'm glad you're here. Take a look around to see some of my projects and the work I've done so far.
+    </p>
+</section>
+
+<section id='latest-posts'>
+    <h2>My Latest projects</h2>
+
+    <ul>
+        {% for post in latest_posts %}
+            {% include "blog/includes/posts.html" %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id='about'>
+    <h2>About me</h2>
+    <p>I'm a second-year university student passionate about coding and technology.
+         Currently exploring the vast world of software development, 
+         I immerse myself in coding challenges and projects that sharpen my skills and make a positive impact.
+          Always eager to learn and collaborate, I aim to combine my academic knowledge with
+           real-world applications to innovate and solve problems.</p>
+    
+
+</section>
+{% endblock  %}
